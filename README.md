@@ -21,7 +21,7 @@
 
 ```
     {
-      disabled: f,
+      disabled: false,
     module: "MMM-NatureCalendar",
     position: "middle_center",
     config: {
