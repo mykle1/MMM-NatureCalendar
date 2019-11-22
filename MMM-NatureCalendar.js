@@ -1,6 +1,5 @@
 /* Magic Mirror
  * Module: MMM-NatureCalendar
-
  *
  * By Mykle1 - MIT Licensed
  *
@@ -20,35 +19,32 @@ Module.register("MMM-NatureCalendar",{
 
 	getDom: function() {
 
+
+    // The pin images and postitioning
 		var wrapper = document.createElement("div");
 		wrapper.style="display:inline-flex; flex-direction: row; justify-content:center;"
-		//var pic = document.createElement("div");
 		var img = document.createElement("img");
 		img.className = 'image';
 		img.style.zorder=2;
 		img.style.position='relative';
-		img.style.top=-7+'px'; 
+		img.style.top=-7+'px';
 		img.style.left=15+'px';
-		
 		img.src = "modules/MMM-NatureCalendar/images/left.png";
+
 		var img2 = document.createElement("img");
-		img2.className = 'image';
-		img2.src = "modules/MMM-NatureCalendar/images/left.png";		
+		img2.className = 'image2';
+		img2.src = "modules/MMM-NatureCalendar/images/right.png";
 
-		//pic.appendChild(img);
 		wrapper.appendChild(img);
-		
 
-		//return wrapper;
-
-
+    // the iframe for the calendars and calendar options
 		var iframe = document.createElement("IFRAME");
 		iframe.classList.add("iframe");
-		iframe.style = "border:none z-order:1;";
-		//iframe.style = "padding-top: 170px";
+		iframe.style = "z-order:1;";
+		iframe.style = "border:none"
 		iframe.scrolling="no";
 
-	if (this.config.calendarType === "day") {
+	if (this.config.calendarType === "today") {
 		iframe.height = "205px";
 		iframe.width = "320px";
 		type="text/javascript";
@@ -56,13 +52,13 @@ Module.register("MMM-NatureCalendar",{
 
 
 	} else if (this.config.calendarType === "month") {
-		iframe.height = "153px";
+		iframe.height = "163px";
 		iframe.width = "320px";
 		type="text/javascript";
 		iframe.src="https://widgetscode.com/wc/mcc/" + this.config.lang + "?skin=" + this.config.color;
 
 
-  } else if (this.config.calendarType === "monthly") {
+  } else if (this.config.calendarType === "monthPlus") {
 		iframe.height = "365px";
 		iframe.width = "320px";
 		type="text/javascript";
@@ -73,19 +69,8 @@ Module.register("MMM-NatureCalendar",{
 		img2.style.top="-7px";
 		img2.style.zorder=2;
 		wrapper.appendChild(iframe)
-		wrapper.appendChild(img2);		
+		wrapper.appendChild(img2);
 		return wrapper;
-
-		// var wrapper = document.createElement("div");
-		//
-		// var pic = document.createElement("div");
-    // var img = document.createElement("img");
-    // img.className = 'image';
-		// img.src = "modules/MMM-NatureCalendar/images/left.png";
-    // pic.appendChild(img);
-    // wrapper.appendChild(img);
-		//
-		// return wrapper;
 
 	},
 

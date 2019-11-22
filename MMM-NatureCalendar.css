@@ -10,8 +10,21 @@
 }
 
 .MMM-NatureCalendar .image {
- height: 2%;
- width: 2%;
+ height: 3%;
+ width: 3%;
+ margin-left: 0px;
+ margin-right: -4px;
+ margin-top: -3px;
+ margin-bottom: 0px;
+}
+
+.MMM-NatureCalendar .image2 {
+ height: 3%;
+ width: 3%;
+ margin-left: 0px;
+ margin-right: 0px;
+ margin-top: -2px;
+ margin-bottom: 0px;
 }
 
 .MMM-NatureCalendar {
