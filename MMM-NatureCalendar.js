@@ -21,20 +21,30 @@ Module.register("MMM-NatureCalendar",{
 	getDom: function() {
 
 		var wrapper = document.createElement("div");
-
-		var pic = document.createElement("div");
+		wrapper.style="display:inline-flex; flex-direction: row; justify-content:center;"
+		//var pic = document.createElement("div");
 		var img = document.createElement("img");
 		img.className = 'image';
+		img.style.zorder=2;
+		img.style.position='relative';
+		img.style.top=-7+'px'; 
+		img.style.left=15+'px';
+		
 		img.src = "modules/MMM-NatureCalendar/images/left.png";
-		pic.appendChild(img);
-		wrapper.appendChild(img);
+		var img2 = document.createElement("img");
+		img2.className = 'image';
+		img2.src = "modules/MMM-NatureCalendar/images/left.png";		
 
-		return wrapper;
+		//pic.appendChild(img);
+		wrapper.appendChild(img);
+		
+
+		//return wrapper;
 
 
 		var iframe = document.createElement("IFRAME");
 		iframe.classList.add("iframe");
-		iframe.style = "border:none";
+		iframe.style = "border:none z-order:1;";
 		//iframe.style = "padding-top: 170px";
 		iframe.scrolling="no";
 
@@ -58,8 +68,13 @@ Module.register("MMM-NatureCalendar",{
 		type="text/javascript";
 		iframe.src="https://widgetscode.com/wc/nature/" + this.config.lang + "?skin=" + this.config.color;
   }
-
-		return iframe;
+	  img2.style.position='relative';
+	  img2.style.left='-20px' // parseInt(iframe.width)-10+'px';
+		img2.style.top="-7px";
+		img2.style.zorder=2;
+		wrapper.appendChild(iframe)
+		wrapper.appendChild(img2);		
+		return wrapper;
 
 		// var wrapper = document.createElement("div");
 		//
