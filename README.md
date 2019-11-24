@@ -51,14 +51,17 @@ No language option for calendarType: "today"
 * th = Thai
 
 ## Color codes for config
-* aqua0 = Aqua
-* dblue0 = Blue #1
-* eblue0 = Blue #2
-* blk0 = Gray (Dark)
-* nb0 = Gray (Light)
-* green0 = Green
-* purple0 = Purple
-* dred0 = Red
-* gold0 = Yellow
+
+### Use just the number
+
+* 1 = Aqua
+* 2 = Blue #1
+* 3 = Blue #2
+* 4 = Gray (Dark)
+* 5 = Gray (Light)
+* 6 = Green
+* 7 = Purple
+* 8 = Red
+* 9 = Yellow
 
 ## Thanks go to @sdetweil for his z-index magic
