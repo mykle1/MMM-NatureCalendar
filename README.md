@@ -21,9 +21,10 @@
     module: "MMM-NatureCalendar",
     position: "middle_center",
     config: {
-      calendarType: "today", // today, month and monthPlus
+      calendarType: "today", // today, month and monthPlus. No language or color options for calendarType: "today"
       lang: "all", // See language chart below. "all" for English.
       colorCode: "4", // see color codes below
+      border: "no",
     }
   },
 ```
