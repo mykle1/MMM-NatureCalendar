@@ -10,8 +10,24 @@ Module.register("MMM-NatureCalendar",{
 	defaults: {
 		  calendarType: "", // Set in config.js
 			lang: "",         // Set in config.js
-			color: "",        // Set in config.js
+			colorCode: "",        // Set in config.js
+			border: "no",
 	},
+
+	start: function() {
+			self = this;
+			this.color = {
+					'1': 'aqua0',
+					'2': 'dblue0',
+					'3': 'eblue0',
+					'4': 'blk0',
+					'5': 'nb0',
+					'6': 'green0',
+					'7': 'purple0',
+					'8': 'dred0',
+					'9': 'gold0',
+				}
+			},
 
 	getStyles: function() {
         return ["MMM-NatureCalendar.css"];
@@ -41,28 +57,32 @@ Module.register("MMM-NatureCalendar",{
 		var iframe = document.createElement("IFRAME");
 		iframe.classList.add("iframe");
 		iframe.style = "z-order:1;";
+		if (this.config.border == "yes") {
+			iframe.style.frameborder = "1";
+		} else {
 		iframe.style = "border:none"
+		}
 		iframe.scrolling="no";
 
 	if (this.config.calendarType === "today") {
-		iframe.height = "205px";
+		iframe.height = "208px";
 		iframe.width = "320px";
 		type="text/javascript";
 		iframe.src="https://widgetscode.com/wc/naturedigi";
 
 
 	} else if (this.config.calendarType === "month") {
-		iframe.height = "163px";
+		iframe.height = "152px";
 		iframe.width = "320px";
 		type="text/javascript";
-		iframe.src="https://widgetscode.com/wc/mcc/" + this.config.lang + "?skin=" + this.config.color;
+		iframe.src="https://widgetscode.com/wc/mcc/" + this.config.lang + "?skin=" + this.color[this.config.colorCode];
 
 
   } else if (this.config.calendarType === "monthPlus") {
 		iframe.height = "365px";
 		iframe.width = "320px";
 		type="text/javascript";
-		iframe.src="https://widgetscode.com/wc/nature/" + this.config.lang + "?skin=" + this.config.color;
+		iframe.src="https://widgetscode.com/wc/nature/" + this.config.lang + "?skin=" + this.color[this.config.colorCode];
   }
 	  img2.style.position='relative';
 	  img2.style.left='-20px' // parseInt(iframe.width)-10+'px';
