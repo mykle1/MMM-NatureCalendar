@@ -23,12 +23,12 @@
     config: {
       calendarType: "today", // today, month and monthPlus
       lang: "all", // See language chart below. "all" for English.
-      color: "gray0", // see color codes below
+      colorCode: "4", // see color codes below
     }
   },
 ```
 
-No language option for calendarType: "today"
+## No language or color options for calendarType: "today"
 
 
 ## Language codes for config
@@ -51,8 +51,6 @@ No language option for calendarType: "today"
 * th = Thai
 
 ## Color codes for config
-
-### Use just the number
 
 * 1 = Aqua
 * 2 = Blue #1
